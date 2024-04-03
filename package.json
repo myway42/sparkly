@@ -1,0 +1,32 @@
+{
+  "name": "@myway42/sparkly",
+  "version": "0.0.1",
+  "description": "Add sparkle to your text, a webComponent built with JavaScript and CSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "css",
+    "javascript",
+    "spark",
+    "sparkle",
+    "sparkly",
+    "star",
+    "webcomponent",
+    "web-component"
+  ],
+  "author": "myway42",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myway42/sparkly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/myway42/sparkly/issues"
+  },
+  "homepage": "https://github.com/myway42/sparkly#readme"
+}
