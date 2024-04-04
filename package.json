@@ -1,6 +1,6 @@
 {
   "name": "@myway42/sparkly",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Add sparkle to your text, a webComponent built with JavaScript and CSS",
   "main": "/src/sparkly-view.js",
   "scripts": {

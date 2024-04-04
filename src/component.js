@@ -1,6 +1,9 @@
 const template = document.createElement('template')
 template.innerHTML = `
 <style>
+  :host {
+    display: inline-block;
+  }
   .sparkly {
     position: relative;
     display: inline-block;
@@ -77,17 +80,17 @@ export default class Sparkly extends HTMLElement {
     this.container = this.shadowRoot.querySelector('.sparkly')
   }
 
-  get canClick() {
-    return this.getAttribute('canClick')
+  get canclick() {
+    return this.getAttribute('canclick')
   }
   get color() {
     return this.getAttribute('color') || '#FFC700'
   }
-  get minSize() {
-    return this.getAttribute('minSize') || 10
+  get minsize() {
+    return this.getAttribute('minsize') || 10
   }
-  get maxSize() {
-    return this.getAttribute('maxSize') || 20
+  get maxsize() {
+    return this.getAttribute('maxsize') || 20
   }
 
   connectedCallback() {
@@ -96,17 +99,16 @@ export default class Sparkly extends HTMLElement {
     const { toggleSpark } = useIntervalSpark(
       sparkContent,
       {
-        canClick: this.canClick,
         color: this.color,
-        minSize: this.minSize,
-        maxSize: this.maxSize,
+        minsize: this.minsize,
+        maxsize: this.maxsize,
       },
       this.container
     )
     // 开始闪烁
     toggleSpark('start')
     // 显示隐藏
-    if (this.canClick) {
+    if (!!this.canclick) {
       this.container.addEventListener('click', () => {
         toggleSpark()
       })
@@ -120,12 +122,12 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min)) + min
 }
 // 生成单个闪光
-function generateSparkle(sparkContent, color, minSize, maxSize) {
+function generateSparkle(sparkContent, color, minsize, maxsize) {
   const sparkle = {
     id: String(random(10000, 99999)),
     createdAt: Date.now(),
     color,
-    size: random(minSize, maxSize),
+    size: random(minsize, maxsize),
     style: {
       top: random(0, 100) + '%',
       left: random(0, 100) + '%',
@@ -149,14 +151,14 @@ function generateSparkle(sparkContent, color, minSize, maxSize) {
   sparkContent.appendChild(sparkle.dom)
   return sparkle
 }
-function useIntervalSpark(sparkContent, { color, minSize, maxSize }, parent) {
+function useIntervalSpark(sparkContent, { color, minsize, maxsize }, parent) {
   // 初始闪光
   let Sparkles = Array(3)
     .fill('')
-    .map(() => generateSparkle(sparkContent, color, minSize, maxSize))
+    .map(() => generateSparkle(sparkContent, color, minsize, maxsize))
   // 追加闪光
   const setSparkles = () => {
-    const sparkle = generateSparkle(sparkContent, color, minSize, maxSize)
+    const sparkle = generateSparkle(sparkContent, color, minsize, maxsize)
     const now = Date.now()
     Sparkles.forEach((item) => {
       if (now - item.createdAt > 750) {

@@ -19,9 +19,13 @@ npm install @myway42/sparkly
 then import
 
 ```js
-import Sparkly from '@sparkly/component.js'
+import Sparkly from '@myway42/sparkly/component.js'
 
+// same as previously
 Sparkly.register()
+
+// registering as a different tag-name:
+Sparkly.register('nice-sparkly')
 ```
 
 Or grab from [unpkg.com CDN](https://unpkg.com/@myway42/sparkly):
@@ -40,7 +44,7 @@ Or grab from [unpkg.com CDN](https://unpkg.com/@myway42/sparkly):
 
 |   Name   |  type   |                   Description                   |
 | :------: | :-----: | :---------------------------------------------: |
-| canClick | boolean | Whether the `Sparkly` can be click to hide/show |
+| canclick | boolean | Whether the `Sparkly` can be click to hide/show |
 |  color   | string  |                 `Sparkle` color                 |
-| minSize  | number  |               `Sparkle` min size                |
-| maxSize  | number  |               `Sparkle` max size                |
+| minsize  | number  |               `Sparkle` min size                |
+| maxsize  | number  |               `Sparkle` max size                |
