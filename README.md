@@ -1,3 +1,5 @@
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/@myway42/sparkly) [![NPM Version](https://img.shields.io/npm/v/%40myway42%2Fsparkly)](https://www.npmjs.com/package/@myway42/sparkly)
+
 # \<sparkly-view>
 
 Easily start.
