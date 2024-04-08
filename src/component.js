@@ -62,9 +62,9 @@ template.innerHTML = `
 </style>
 
 <div class="sparkly">
-  <strong @click="toggleClick">
+  <span @click="toggleClick">
     <slot></slot>
-  </strong>
+  </span>
 </div>
 `
 
@@ -81,16 +81,28 @@ export default class Sparkly extends HTMLElement {
   }
 
   get canclick() {
-    return this.getAttribute('canclick')
+    return this.getAttribute('canclick') || false
+  }
+  set canclick(value) {
+    this.setAttribute('canclick', value)
   }
   get color() {
     return this.getAttribute('color') || '#FFC700'
   }
+  set color(value) {
+    this.setAttribute('color', value)
+  }
   get minsize() {
     return this.getAttribute('minsize') || 10
   }
+  set minsize(value) {
+    this.setAttribute('minsize', value)
+  }
   get maxsize() {
     return this.getAttribute('maxsize') || 20
+  }
+  set maxsize(value) {
+    this.setAttribute('maxsize', value)
   }
 
   connectedCallback() {

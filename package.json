@@ -1,10 +1,10 @@
 {
   "name": "@myway42/sparkly",
-  "version": "0.0.4",
+  "version": "0.0.13",
   "description": "Add sparkle to your text, a webComponent built with JavaScript and CSS",
-  "main": "/src/sparkly-view.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src --out-dir lib"
   },
   "publishConfig": {
     "access": "public"
@@ -28,5 +28,10 @@
   "bugs": {
     "url": "https://github.com/myway42/sparkly/issues"
   },
-  "homepage": "https://github.com/myway42/sparkly#readme"
+  "homepage": "https://github.com/myway42/sparkly#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4"
+  }
 }

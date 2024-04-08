@@ -4,19 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sparkly</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
-    <sparkly-view><h1>Title</h1></sparkly-view><br/ >
-
-    <sparkly-view color="red">hello world</sparkly-view><br/ ><br/ >
-
-    <sparkly-view canClick="true"><button>click to toggle</button></sparkly-view><br/ ><br/ >
-
-    <sparkly-view minSize="30" maxSize="50" color="white">
-      <img src="https://avatars.githubusercontent.com/u/27712472?v=4" alt="image" />
+    <sparkly-view><h1>Title</h1></sparkly-view><br />
+    <sparkly-view color="red">hello world</sparkly-view><br /><br />
+    <sparkly-view canclick="true"><button>click to toggle</button></sparkly-view><br /><br />
+    <sparkly-view minsize="30" maxsize="50" color="white">
+      <img width="200" src="https://avatars.githubusercontent.com/u/27712472?v=4" alt="image" />
     </sparkly-view>
-    <br/ >
 
-    <script src="./src/sparkly-view.js" type="module"></script>
+    <script src="./lib/index.js" type="module"></script>
   </body>
 </html>
