@@ -23,7 +23,13 @@ npm install @myway42/sparkly
 then import
 
 ```js
-import Sparkly from '@myway42/sparkly'
+import '@myway42/sparkly'
+```
+
+Or
+
+```js
+import Sparkly from '@myway42/sparkly/lib/component.js'
 
 // same as previously
 Sparkly.register()
@@ -41,7 +47,7 @@ Or grab from [unpkg.com CDN](https://unpkg.com/@myway42/sparkly):
 ## Usage
 
 ```html
-<sparkly-view>hello world</sparkly-view>
+<sparkly-view canclick="true" color="red" minsize="12" maxsize="24">hello world</sparkly-view>
 ```
 
 ## Attributes

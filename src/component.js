@@ -67,7 +67,7 @@ template.innerHTML = `
   </span>
 </div>
 `
-
+let intersectionObserver
 export default class Sparkly extends HTMLElement {
   static register(tag = 'sparkly-view') {
     customElements.define(tag, Sparkly)
@@ -106,8 +106,9 @@ export default class Sparkly extends HTMLElement {
   }
 
   connectedCallback() {
-    // 闪光体
+    let isDisable = false
     let sparkContent = document.createElement('span')
+
     const { toggleSpark } = useIntervalSpark(
       sparkContent,
       {
@@ -117,14 +118,25 @@ export default class Sparkly extends HTMLElement {
       },
       this.container
     )
-    // 开始闪烁
-    toggleSpark('start')
-    // 显示隐藏
+
     if (!!this.canclick) {
       this.container.addEventListener('click', () => {
+        isDisable = !isDisable
         toggleSpark()
       })
     }
+
+    intersectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((item) => {
+        if (isDisable) return
+        if (item.isIntersecting) {
+          toggleSpark('start')
+        } else {
+          toggleSpark('end')
+        }
+      })
+    })
+    intersectionObserver.observe(this.container)
   }
 }
 
@@ -195,6 +207,7 @@ function useIntervalSpark(sparkContent, { color, minsize, maxsize }, parent) {
     }
   }
   window.addEventListener('beforeunload', () => {
+    intersectionObserver.unobserve(parent)
     toggleSpark('end')
   })
   return { Sparkles, toggleSpark }
