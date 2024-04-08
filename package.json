@@ -1,10 +1,11 @@
 {
   "name": "@myway42/sparkly",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Add sparkle to your text, a webComponent built with JavaScript and CSS",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "type": "module",
   "scripts": {
-    "build": "babel src --out-dir lib"
+    "build": "rollup -c"
   },
   "publishConfig": {
     "access": "public"
@@ -30,8 +31,7 @@
   },
   "homepage": "https://github.com/myway42/sparkly#readme",
   "devDependencies": {
-    "@babel/cli": "^7.24.1",
-    "@babel/core": "^7.24.4",
-    "@babel/preset-env": "^7.24.4"
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.14.1"
   }
 }

@@ -29,7 +29,7 @@ import '@myway42/sparkly'
 Or
 
 ```js
-import Sparkly from '@myway42/sparkly/lib/component.js'
+import Sparkly from '@myway42/sparkly/dist/component.js'
 
 // same as previously
 Sparkly.register()

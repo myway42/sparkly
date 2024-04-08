@@ -68,7 +68,7 @@ template.innerHTML = `
 </div>
 `
 let intersectionObserver
-export default class Sparkly extends HTMLElement {
+class Sparkly extends HTMLElement {
   static register(tag = 'sparkly-view') {
     customElements.define(tag, Sparkly)
   }
@@ -212,3 +212,5 @@ function useIntervalSpark(sparkContent, { color, minsize, maxsize }, parent) {
   })
   return { Sparkles, toggleSpark }
 }
+
+export default Sparkly
