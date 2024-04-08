@@ -8,6 +8,8 @@ Easily start.
 <sparkly-view>hello world</sparkly-view>
 ```
 
+[Live Demo](https://myway42.github.io/sparkly/)
+
 ## Description
 
 This is a custom element that allows you to add **sparkly** animation to the `text`、`button`、`img` and so on.
