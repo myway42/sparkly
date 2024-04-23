@@ -62,9 +62,7 @@ template.innerHTML = `
 </style>
 
 <div class="sparkly">
-  <span @click="toggleClick">
-    <slot></slot>
-  </span>
+  <slot></slot>
 </div>
 `
 let intersectionObserver: IntersectionObserver
@@ -82,7 +80,8 @@ class Sparkly extends HTMLElement {
   }
 
   get canclick() {
-    return this.getAttribute('canclick') || false
+    const canclick = this.getAttribute('canclick')
+    return canclick === 'false' || !canclick ? false : true
   }
   set canclick(value) {
     this.setAttribute('canclick', String(value))
@@ -109,7 +108,6 @@ class Sparkly extends HTMLElement {
   connectedCallback() {
     let isDisable = false
     let sparkContent = document.createElement('span')
-
     const { toggleSpark } = useIntervalSpark(
       sparkContent,
       {
@@ -127,6 +125,7 @@ class Sparkly extends HTMLElement {
           toggleSpark()
         })
     }
+    toggleSpark('start')
 
     intersectionObserver = new IntersectionObserver((entries) => {
       entries.forEach((item) => {

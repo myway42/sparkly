@@ -1,11 +1,9 @@
 {
+  "extends": "@myway42/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "target": "es6",
-    "module": "ESNext",
-    "strict": true,
     "declaration": true,
-    "declarationDir": "./dist/types"
+    "declarationDir": "./dist"
   },
-  "include": ["src/**/*"],
-  "exclude": ["**/*.spec.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["**/*.test.ts"]
 }

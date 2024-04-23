@@ -1,3 +1,3 @@
-import Sparkly from './component.js'
+import Sparkly from './component'
 
 Sparkly.register()
