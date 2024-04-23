@@ -2,3 +2,4 @@ node_modules
 *-lock.yaml
 *-debug.log
 *.lock
+coverage/

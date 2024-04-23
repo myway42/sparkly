@@ -1,3 +1,6 @@
 src/
 rollup.config.mjs
+rollup.config2.mjs
 tsconfig.json
+web-test-runner.config.js
+coverage/
